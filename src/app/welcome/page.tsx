@@ -726,7 +726,7 @@ const Page = (): React.ReactElement => {
 
 
     return (
-        <div className='bg-black h-screen w-full text-white flex justify-center items-center text-center p-4'>
+        <div className=' h-screen w-full text-white flex justify-center items-center text-center p-4'>
             <div className='flex flex-col items-center justify-center gap-[53px]'>
                 {welcome[current].image}
                 <div className='gap-[32px] flex flex-col justify-center items-center '>

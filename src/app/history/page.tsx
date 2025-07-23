@@ -1,17 +1,16 @@
+"use client"
+import { Header } from "@/components/Header"
 import { LeftArrow } from "@/components/Svgs"
 import Timeline from "@/components/Timeline"
+import { useRouter } from "next/navigation"
 
 
-const page = (): React.ReactNode => {
+const Page = (): React.ReactElement => {
+    const router = useRouter();
     return (
-        <div className="w-full h-screen bg-black text-white p-4">
+        <div className="w-full h-screen text-white py-4">
             {/* Header */}
-            <div className="h-[50px] w-full grid grid-cols-3 justify-between items-center   ">
-                <LeftArrow />
-                <h1 className="font-medium text-[18px] text-center ">History</h1>
-
-            </div>
-
+            <Header text="History" />
             <div>
                 <Timeline />
             </div>
@@ -19,4 +18,4 @@ const page = (): React.ReactNode => {
     )
 }
 
-export default page
+export default Page
