@@ -11,7 +11,7 @@ const TimelineCard = ({ title, url }: { title: string, url: string }) => {
                 <div className='flex gap-1'>
                     <h1 className='font-medium text-[16px]'>{title}</h1>
                     {title.toLowerCase() == "coin" ? <Coin w={25} h={25} /> : ""}
-                    {title.toLowerCase() == "randomnumbers" ? <RandomNumbers w={25} h={25} /> : ""}
+                    {title.toLowerCase() == "random numbers" ? <RandomNumbers w={25} h={25} /> : ""}
                     {title.toLowerCase() == "giveaway" ? <Giveaway w={25} h={25} /> : ""}
                     {title.toLowerCase() == "participant" ? <Participant w={25} h={25} /> : ""}
                 </div>

@@ -15,7 +15,7 @@ const Timeline = () => {
             url: "ppsspp"
         },
         {
-            game: "Participants",
+            game: "Participant",
             text: "Results",
             url: "ppsspp"
         },
