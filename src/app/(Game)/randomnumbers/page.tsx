@@ -35,7 +35,7 @@ const Page = (): React.ReactElement => {
     useEffect( () => {
         scrollToNumber( minScrollRef.current, minValue );
         scrollToNumber( maxScrollRef.current, maxValue );
-    }, [] );
+    });
 
     const calculate = () => {
         const availableNumbers = Array.from(

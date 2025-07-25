@@ -19,7 +19,7 @@ const Page = (): React.ReactElement => {
         setTimeout( () => {
             const outcome = Math.random() < 0.5 ? 'Heads' : 'Tails';
             setResult( outcome );
-            localStorage.setItem( "coin", JSON.stringify( outcome ) );
+            localStorage.setItem( "coin", JSON.stringify( result ) );
             setIsFlipping( false );
             router.push( "/coin/result" );
         }, 1000 );

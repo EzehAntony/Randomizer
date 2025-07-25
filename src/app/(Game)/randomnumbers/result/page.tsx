@@ -3,15 +3,16 @@ import ShareButton from '@/components/buttons/ShareButton';
 import { Header } from '@/components/Header';
 import { Copy, Generate, } from '@/components/Svgs';
 import { useRouter } from 'next/navigation';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Page = (): React.ReactElement => {
     const router = useRouter();
-    const data = localStorage.getItem( "randomNumber" );
-    const numbers: [] = JSON.parse( data ?? "[]" );
+    const [ numbers, setNumbers ] = useState<number[]>( [] );
+
     useEffect( () => {
-        console.log( data );
-    }, [ data ] );
+        const data = localStorage.getItem( "randomNumber" );
+        setNumbers( data ? JSON.parse( data ) : [] );
+    }, [] );
 
     return (
         <div className='h-screen w-full flex flex-col gap-[24px] '>
