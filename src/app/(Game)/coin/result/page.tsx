@@ -1,12 +1,16 @@
-import GenerateButton from "@/components/buttons/GenerateButton"
-import HeadButton from "@/components/buttons/HeadButton"
+"use client";
+import GenerateButton from "@/components/buttons/GenerateButton";
+import HeadButton from "@/components/buttons/HeadButton";
 
-import ShareButton from "@/components/buttons/ShareButton"
-import TailButton from "@/components/buttons/TailButton"
-import { Header } from "@/components/Header"
+import ShareButton from "@/components/buttons/ShareButton";
+import TailButton from "@/components/buttons/TailButton";
+import { Header } from "@/components/Header";
+import { useRouter } from "next/navigation";
 
 
-const page = (): React.ReactElement => {
+const Page = (): React.ReactElement => {
+    const router = useRouter();
+    const outcome = JSON.parse( localStorage.getItem( "coin" ) ?? "null" );
     return (
         <div className="h-screen w-full flex flex-col gap-[24px] ">
             <Header text="Result" />
@@ -18,14 +22,16 @@ const page = (): React.ReactElement => {
                         <ShareButton />
                     </div>
                     <div className="gap-[4px] flex">
-                        <HeadButton text={"Head"} /><TailButton />
+                        { outcome == "Heads" ? <HeadButton text="Heads" /> : <TailButton /> }
                     </div>
 
                 </div>
-                <GenerateButton text={"Toss Again"} />
+                <div onClick={ () => router.back() }>
+                    <GenerateButton text={ "Toss Again" } />
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default page
+export default Page;
